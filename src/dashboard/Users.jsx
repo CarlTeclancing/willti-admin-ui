@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import SideBar from "../components/SideBar"
 import TopBar from "../components/TopBar"
+import { Link } from 'react-router-dom';
 
 export default function Users() {
     const users = [
@@ -99,6 +100,7 @@ export default function Users() {
                             <th>Status</th>
                         </tr>
                         {currentUsers.map((user) =>(
+                        
                         <tr className={count % 2 === 0 ?'table-r1':'table-r2'} key={user.id} >
                             <td>{count +=1}</td>
                             <td>{user.name}</td>
@@ -108,8 +110,9 @@ export default function Users() {
                             <td>{user.address}</td>
                             <td>{user.country}</td>
                             <td><span className='verify'>{user.status}</span></td>
-                            
+                            <td><Link to={`/dashboard/users/user-detials?id=${user.id}`} state={{ user }} className='btn-outline'>View More</Link></td>
                         </tr>
+                        
                         
                         ) )}
 

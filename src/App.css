@@ -67,7 +67,8 @@ body::-webkit-scrollbar {
   cursor: pointer;
   border: none;
   margin: 12px;
-  background-color: var(--secondary);
+  background-color:none;
+  border: 1px solid  var(--primary);
 }
 .table{
   width: 100%;
@@ -78,7 +79,7 @@ body::-webkit-scrollbar {
 .row-fluid{
   width: calc(100% - 100px);
   height: auto;
-  padding: 24px;
+  padding: 6px;
   background-color: var(--tertiary);
   border-radius: 12px;
 }
