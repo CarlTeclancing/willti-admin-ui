@@ -1,0 +1,67 @@
+/*profile page*/
+.column{
+    width: 100%;
+    height: 100vh;
+    padding: 24px;
+}
+.row{
+    width: calc(100% - 100px);
+    height: 588px;
+    padding: 24px;
+    background-color: var(--tertiary);
+    border-radius: 12px;
+}
+.tabs{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid var(--text);
+}
+.tab-el{
+    margin: 24px;
+    height: 32px;
+    cursor: pointer;
+}
+.active-tab{
+    color: var(--primary);
+    border-bottom: 4px solid var(--primary);
+    font-weight: bolder;
+}
+.tab-content{
+    padding-left: 24px;
+}
+.none{
+    display: none;
+}
+.user-form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.sec-1{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+.form-el{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 6px;
+}
+.form-el input{
+    width: 100%;
+    height: 48px;
+    background-color: var(--text);
+    border-radius: 6px;
+    border: none;
+    margin-top: 12px;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.profile-image{
+    width: 200px;
+    height: 200px;
+}

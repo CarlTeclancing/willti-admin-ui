@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SideBar from "../components/SideBar"
 import TopBar from "../components/TopBar"
 
 
-export default function Dashbaord(active) {
-    var active =2
+export default function Dashbaord() {
+    
+    useState(1)
   return (
     <div className="container">
 
-    <SideBar />
+    <SideBar setActive={1} />
     <div className="narrow">
-      <TopBar />
+      <TopBar PageTitle='Dashboard' />
     </div>
     
   </div>

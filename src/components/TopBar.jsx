@@ -2,12 +2,13 @@ import React from 'react'
 import Search from '../assets/icons/search.svg'
 import Notification from '../assets/icons/notification.png'
 import User from '../assets/icons/user.png'
+import { Link } from 'react-router-dom'
 
-export default function TopBar() {
-    var PageTitle = "Dashboard"
+export default function TopBar({PageTitle}) {
+    
   return (
     <div className='topbar'>
-        <h4>{PageTitle}</h4>
+        <h2>{PageTitle}</h2>
         <div className="top-el">
             <div className="search">
                 <img src={Search} alt="search icon" />
@@ -16,7 +17,9 @@ export default function TopBar() {
             <div className="circle">
                 <img src={Notification} alt="notification icon" />
             </div>
-            <img src={User} alt="user image" />
+
+            <Link to='/dashboard/profile'><img src={User} alt="user image" /></Link>
+            
             
         </div>
     </div>
