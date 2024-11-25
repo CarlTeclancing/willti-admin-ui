@@ -157,8 +157,10 @@ const bookings = [
 //assessing state from the url location variable
     
     const location = useLocation()
-    const { user } = location.state || {} // Destructure item from state
+    const { user, rideData } = location.state || {} // Destructure item from state
     const [turgle, setTurgle] = useState(1)
+
+    
 
     const HandleTurgle = (index)=>{
         setTurgle(index)
@@ -300,7 +302,7 @@ const bookings = [
                                     <td><img src={rideData.car} alt="" /></td>
                                     <td>
                                         <Link 
-                                            to='/dashboard/users/user-detials/ride-details' 
+                                            to='/dashboard/users/ride-details' 
                                             state={{ user, rideData }} 
                                             className='btn-outline'
                                         >
@@ -367,6 +369,7 @@ const bookings = [
                 </div>
             </div>
         </div>
+        
     
     </div>
   )
