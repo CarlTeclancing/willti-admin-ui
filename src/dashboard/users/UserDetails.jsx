@@ -159,6 +159,8 @@ const bookings = [
     const location = useLocation()
     const { user, rideData } = location.state || {} // Destructure item from state
     const [turgle, setTurgle] = useState(1)
+    const [modalValueRides, setModalValueRides] = useState(0)
+    const [modalValueBooking, setModalValueBooking] = useState(0)
 
     
 
@@ -190,6 +192,13 @@ const bookings = [
     }
   };
 
+const ModalRides = (index)=>{
+    setModalValueRides(index)
+}
+
+const ModalBooking = (index)=>{
+    setModalValueBooking(index)
+}
   return (
     <div className="container">
 
@@ -301,13 +310,13 @@ const bookings = [
                                     <td><span className="verify">{rideData.price}</span></td>
                                     <td><img src={rideData.car} alt="" /></td>
                                     <td>
-                                        <Link 
-                                            to='/dashboard/users/ride-details' 
+                                        <span 
+                                            onClick={()=>ModalRides(1)} 
                                             state={{ user, rideData }} 
                                             className='btn-outline'
                                         >
                                             View More
-                                        </Link></td>
+                                        </span></td>
                                 </tr>
                                 ))}
                             </table>
@@ -348,13 +357,13 @@ const bookings = [
                                     <td><img src={booking.carType} alt="" /></td>
                                     <td><img src={booking.Bus} alt="" /></td>
                                     <td>
-                                        <Link 
-                                            to='/dashboard/users/booking-details' 
+                                        <span 
+                                            onClick={()=>ModalBooking(1)} 
                                             state={{ user, booking }} 
                                             className='btn-outline'
                                         >
                                             View More
-                                        </Link></td>
+                                        </span></td>
                                 </tr>
                                 ))}
                             </table>
@@ -367,6 +376,73 @@ const bookings = [
                     </div>
 
                 </div>
+            </div>
+        </div>
+
+
+
+        {/* modal for rides orders */}
+        <div className={modalValueRides == 1?"modal-container":"none"}>
+            <div className="modal">
+                <div className="close">
+                    <i class="bi bi-x-square-fill" onClick={()=>ModalRides(0)}></i>
+                </div>
+                
+                <div className="map">
+
+                </div>
+                <h4>{rideData.time? `${rideData.time}`:""}</h4>
+                <div className="location">
+                    <div className="circle-location red"></div>
+                    <p>{rideData.start? `${rideData.start}`:""}</p>
+                </div>
+                <div className="location">
+                    <div className="circle-location blue"></div>
+                    <p>{rideData.end? `${rideData.end}`:""}</p>
+                </div>
+                <h1>Total ...................................................{rideData.price? `${rideData.price}`:""}cfa</h1>
+                <h4>Driver</h4>
+                <div className="driver">
+                    <img src={User} className='img' alt="" />
+                    <div>
+                        <p>{user.name}</p>
+                        <p>{user.email}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        
+        {/* modal for bookings orders */}
+        <div className={modalValueBooking == 1?"modal-container":"none"}>
+            <div className="modal">
+                <div className="close">
+                    <i class="bi bi-x-square-fill" onClick={()=>ModalBooking(0)}></i>
+                </div>
+                
+                <div className="map">
+
+                </div>
+                <h4>{rideData.time? `${rideData.time}`:""}</h4>
+                <div className="location">
+                    <div className="circle-location red"></div>
+                    <p>{rideData.start? `${rideData.start}`:""}</p>
+                </div>
+                <div className="location">
+                    <div className="circle-location blue"></div>
+                    <p>{rideData.end? `${rideData.end}`:""}</p>
+                </div>
+                <h1>Total ...................................................{rideData.price? `${rideData.price}`:""}cfa</h1>
+                <h4>Driver</h4>
+                <div className="driver">
+                    <img src={User} className='img' alt="" />
+                    <div>
+                        <p>{user.name}</p>
+                        <p>{user.email}</p>
+                    </div>
+                </div>
+
             </div>
         </div>
         

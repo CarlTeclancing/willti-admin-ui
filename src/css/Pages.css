@@ -141,6 +141,9 @@
     right: 24px;
     position: absolute;
     font-size: 24px;
+    color: var(--text);
+    cursor: pointer;
+    
 }
 .back{
     text-decoration: none;
