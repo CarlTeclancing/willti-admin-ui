@@ -99,7 +99,6 @@ table{
 tr{
   width: 100%;
   height: 60px;
-  padding: 12px;
   border-radius: 12px;
   border-collapse: collapse;
 }
@@ -117,11 +116,13 @@ td{
   width: 100%;
   cursor: pointer;
   background-color: var(--table-row-1);
+  padding: 12px;
 
 }
 .table-r2{
   width: 100%;
   cursor: pointer;
   background-color: var(--table-row-2);
+  padding: 12px;
 
 }

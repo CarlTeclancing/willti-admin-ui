@@ -157,10 +157,26 @@ const bookings = [
 //assessing state from the url location variable
     
     const location = useLocation()
-    const { user, rideData } = location.state || {} // Destructure item from state
+    var { user } = location.state || {} // Destructure item from state
     const [turgle, setTurgle] = useState(1)
     const [modalValueRides, setModalValueRides] = useState(0)
     const [modalValueBooking, setModalValueBooking] = useState(0)
+
+    var [rideData, setRideData ] =useState({
+        time: null,
+        start:null,
+        end: null,
+        price:null,
+        car:null,
+    })
+
+    var [bookingData, setBookingData ] =useState({
+        time: null,
+        start:null,
+        end: null,
+        price:null,
+        car:null,
+    })
 
     
 
@@ -192,12 +208,39 @@ const bookings = [
     }
   };
 
-const ModalRides = (index)=>{
-    setModalValueRides(index)
+const ModalRides = (index, rideData)=>{
+    if(index===1){
+        setRideData(rideData)
+        setModalValueRides(index)
+    }else{
+        setRideData({
+            time: null,
+            start:null,
+            end: null,
+            price:null,
+            car:null,
+        })
+        setModalValueRides(index)
+    }
+    
+    
 }
 
-const ModalBooking = (index)=>{
-    setModalValueBooking(index)
+const ModalBooking = (index, bookingData)=>{
+    if(index===1){
+        setBookingData(bookingData)
+        setModalValueBooking(index)
+    }else{
+        setBookingData({
+            time: null,
+            start:null,
+            end: null,
+            price:null,
+            car:null,
+        })
+        setModalValueBooking(index)
+    }
+    
 }
   return (
     <div className="container">
@@ -311,7 +354,7 @@ const ModalBooking = (index)=>{
                                     <td><img src={rideData.car} alt="" /></td>
                                     <td>
                                         <span 
-                                            onClick={()=>ModalRides(1)} 
+                                            onClick={()=>ModalRides(1, rideData)} 
                                             state={{ user, rideData }} 
                                             className='btn-outline'
                                         >
@@ -358,7 +401,7 @@ const ModalBooking = (index)=>{
                                     <td><img src={booking.Bus} alt="" /></td>
                                     <td>
                                         <span 
-                                            onClick={()=>ModalBooking(1)} 
+                                            onClick={()=>ModalBooking(1, bookingData)} 
                                             state={{ user, booking }} 
                                             className='btn-outline'
                                         >
