@@ -117,12 +117,20 @@ td{
   cursor: pointer;
   background-color: var(--table-row-1);
   padding: 12px;
-
+  border-radius: 12px;
 }
 .table-r2{
   width: 100%;
   cursor: pointer;
   background-color: var(--table-row-2);
+  padding: 12px;
+  border-radius: 12px;
+
+}
+tr th{
+  padding: 12px;
+}
+.table-r1 td, .table-r2 td{
   padding: 12px;
 
 }
