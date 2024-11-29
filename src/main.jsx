@@ -25,6 +25,7 @@ import Users from './dashboard/Users.jsx'
 import UserDetails from './dashboard/users/UserDetails.jsx'
 import BookingDetails from './dashboard/booking/BookingDetails.jsx'
 import RidesDetails from './dashboard/rides/RidesDetails.jsx'
+import DriversDetails from './dashboard/drivers/DriversDetails.jsx'
 
 
 
@@ -86,8 +87,11 @@ const router = createBrowserRouter([
     path: "/dashboard/users/ride-details",
     element: <RidesDetails />,
   },
-
-
+  {
+    path: "dashboard/drivers/driver-detials",
+    element: <DriversDetails />,
+  },
+  
 
 
 ]);

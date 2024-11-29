@@ -12,7 +12,7 @@ import Button from '../../components/Button'
 import userRating from '../../assets/icons/userrating.png'
 import qrCode from '../../assets/icons/qrcode.png'
 
-export default function UserDetails() {
+export default function DriversDetails() {
 const rides = [
     {
         time: "Morning ride at 10:40",
@@ -247,7 +247,7 @@ const ModalBooking = (index, bookingData)=>{
   return (
     <div className="container">
 
-        <SideBar setActive={0} />
+        <SideBar setActive={3} />
         <div className="narrow">
             <TopBar PageTitle='Profile'/>
             <div className="column">
@@ -257,7 +257,7 @@ const ModalBooking = (index, bookingData)=>{
                             className={turgle === 1?'tab-el active-tab':'tab-el'}
                             onClick={() =>HandleTurgle(1)}
                             >
-                            My Profile
+                            User Profile
                         </div>
 
                         <div 
@@ -271,13 +271,34 @@ const ModalBooking = (index, bookingData)=>{
                             className={turgle === 3?'tab-el active-tab':'tab-el'}
                             onClick={() =>HandleTurgle(3)}
                         >
-                            Booking History
+                            Driver Documents
+                        </div>
+
+                        <div 
+                            className={turgle === 4?'tab-el active-tab':'tab-el'}
+                            onClick={() =>HandleTurgle(4)}
+                        >
+                            Car Documents
+                        </div>
+
+                        <div 
+                            className={turgle === 5?'tab-el active-tab':'tab-el'}
+                            onClick={() =>HandleTurgle(5)}
+                        >
+                            Security
+                        </div>
+
+                        <div 
+                            className={turgle === 6?'tab-el active-tab':'tab-el'}
+                            onClick={() =>HandleTurgle(6)}
+                        >
+                            Wallet & Transactions
                         </div>
                     </div>
                     <div 
                         className={turgle ===1?'tab-content':'none'}
                     >
-                        <h4>Profile Detiails</h4>
+                        <h4>Driver Detiails</h4>
                         
                         <form action="" className='user-form'>
                             
@@ -376,49 +397,47 @@ const ModalBooking = (index, bookingData)=>{
                     <div 
                         className={turgle ===3?'tab-content':'none'}
                     >
-                        <h4>Booking Hostory</h4>
+                        <h4>Drivers Documents</h4>
                         <div className="row-fluid">
-                            <table className="table">
-                                <tr>
-                                    <td>Id</td>
-                                    <td>Transaction Id</td>
-                                    <td>Agency</td>
-                                    <td>Departure</td>
-                                    <td>Destination</td>
-                                    <td>Price</td>
-                                    <td>Car Type</td>
-                                    <td>Car</td>
-                                    <td>Action</td>
-                                </tr>
-                                {bookings.map((booking)=>(
+                            
 
-                                <tr className="table-r1">
-                                    <td>{count +=1}</td>
-                                    <td>{booking.id}</td>
-                                    <td>{booking.agency}</td>
-                                    <td>{booking.dep}</td>
-                                    <td>{booking.dest}</td>
-                                    <td><span className="verify">{booking.price}</span></td>
-                                    <td><img src={booking.carType} alt="" /></td>
-                                    <td><img src={Bus} alt="" /></td>
-                                    <td>
-                                        <span 
-                                            onClick={()=>ModalBooking(1, bookingData)} 
-                                            state={{ user, booking }} 
-                                            className='btn-outline'
-                                        >
-                                            View More
-                                        </span></td>
-                                </tr>
-                                ))}
-                            </table>
-                            <div className='pagination'>
-                                <button onClick={handlePrevious} disabled={currentPage === 0} className='btn-outline'>Previous</button>
-                                <button onClick={handleNext} disabled={(currentPage + 1) * ridesPerPage >= rides.length} className='btn-outline'>Next</button>
-                            </div>
+                        </div>
+                    </div>
+
+                    <div 
+                        className={turgle ===4?'tab-content':'none'}
+                    >
+                        <h4>Car Documents</h4>
+                        <div className="row-fluid">
+                            
+
                         </div>
 
                     </div>
+
+                    <div 
+                        className={turgle ===5?'tab-content':'none'}
+                    >
+                        <h4>Security</h4>
+                        <div className="row-fluid">
+                            
+
+                        </div>
+
+                    </div>
+
+                    <div 
+                        className={turgle ===6?'tab-content':'none'}
+                    >
+                        <h4>Wallet And Transctions</h4>
+                        <div className="row-fluid">
+                            
+
+                        </div>
+
+                    </div>
+
+                    
 
                 </div>
             </div>

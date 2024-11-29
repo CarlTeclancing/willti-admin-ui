@@ -78,7 +78,7 @@
 }
 .modal{
     width: 40%;
-    height: 750px;
+    height: auto;
     padding: 12px;
     position: relative;
     background-color: var(--table-row-1);
@@ -89,7 +89,7 @@
     align-items: flex-start;
 }
 .map{
-    height: 40%;
+    height: 300px;
     width:100%;
     background-color: rgba(176, 176, 176, 0.51);
     border-radius: 12px;
@@ -129,12 +129,19 @@
     width: 100%;
     font-size: 14px;
 }
+.flex{
+    justify-content: space-between;
+    margin-top: 24px;
+}
 .driver p{
     margin-left: 12px;
 }
 .img{
     width: 60px;
 
+}
+.rating{
+    margin-left: 32px;
 }
 .close{
     top: 24px;
@@ -152,4 +159,43 @@
 .display-none{
     display: none;
     overflow: hidden;
+}
+.box{
+    width: 96%;
+    height: auto;
+    background-color: var(--secondary);
+    padding: 12px;
+    border-radius: 12px;
+}
+.row-200{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.img-1{
+    width: 100px;
+    height: 100px;
+}
+.small{
+    font-size: 12px;
+    font-weight:50;
+    color: var(--text);
+}
+.text-center{
+    text-align: center;
+}
+.row-200 span{
+    font-size: 16px;
+    margin-top: 6px;
+}
+.message{
+    width: 100%;
+    background-color: var(--tertiary);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    border-radius: 12px;
 }
