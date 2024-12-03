@@ -26,6 +26,7 @@ import UserDetails from './dashboard/users/UserDetails.jsx'
 import BookingDetails from './dashboard/booking/BookingDetails.jsx'
 import RidesDetails from './dashboard/rides/RidesDetails.jsx'
 import DriversDetails from './dashboard/drivers/DriversDetails.jsx'
+import AgencyDetails from './dashboard/agency/AgencyDetails.jsx'
 
 
 
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
   {
     path: "dashboard/drivers/driver-detials",
     element: <DriversDetails />,
+  },
+  {
+    path: "dashboard/agency/agency-detials",
+    element: <AgencyDetails />,
   },
   
 
