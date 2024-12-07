@@ -1,7 +1,53 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+import SideBar from "../../components/SideBar"
+import TopBar from "../../components/TopBar"
+import { Link } from 'react-router-dom'
+import Button from '../../components/Button'
+import { Route } from 'react-router-dom'
+import imgBus from '../../assets/images/Rectangle 24521.png'
 
 export default function AgencyDetails() {
+
+    const location = useLocation()
+    var { agency } = location.state || {} // Destructure item from state
+
+
+
   return (
-    <div>AgencyDetails</div>
+    <div className="container">
+
+        <SideBar />
+        <div className="narrow">
+            <TopBar PageTitle='Agencies Details' />
+            <div className="column">
+                <div className="row-100">
+
+                    <h3>Agency Management | {agency.name}</h3>
+                    <Button value="Add Branch"/>
+                </div>
+                <div className="row-100">
+                    <img src={imgBus} alt="" />
+                    <div className="section">
+                        <h4>{agency.name}</h4>
+                        <p>This is one of the best and oldest agency in Cameroon focusing on traveling from Yaoundé to bafoussam, yaounde to bamenda, bamenda to Yaoundé and all travels around the NWE, West Routs</p>
+                        <span>Branches : 10</span> <span>No of Cars: 44</span>
+                        <div className="col">
+
+                            <button className="btn-secondary">65 Drivers</button>
+                            <button className="btn-secondary">200 Orders</button>
+                            <button className="btn-secondary">21mil Revenue</button>
+                        </div>
+                    </div>
+                </div>
+            <div className="row-100">
+                
+            </div>
+                
+            </div>
+
+        </div>
+
+    </div>
   )
 }
