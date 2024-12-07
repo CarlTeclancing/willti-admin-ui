@@ -11,6 +11,9 @@ import Bus from '../../assets/icons/bus.png'
 import Button from '../../components/Button'
 import userRating from '../../assets/icons/userrating.png'
 import qrCode from '../../assets/icons/qrcode.png'
+import Wallet from '../../assets/icons/wallet.svg'
+import ArrowLeft from '../../assets/icons/arrow-right.svg'
+
 
 export default function DriversDetails() {
 const rides = [
@@ -431,7 +434,18 @@ const ModalBooking = (index, bookingData)=>{
                     >
                         <h4>Wallet And Transctions</h4>
                         <div className="row-fluid">
-                            
+                            <div className="wallet">
+                                <div className="row-200">
+                                    <span><img src={Wallet} alt="" /> User Balance</span>
+                                </div>
+
+                                <div className="row-200">
+                                    <h3>0.00FCFA</h3>
+                                    <img src={ArrowLeft} alt="" />
+                                </div>
+
+                                <Button value='Edit Balance' />
+                            </div>
 
                         </div>
 
