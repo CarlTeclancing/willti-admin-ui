@@ -74,6 +74,36 @@ export default function AgencyDetails() {
                             Admin & User Account
                         </div>
                     </div>
+
+                    <div 
+                        className={turgle ===1?'tab-content':'none'}
+                    >
+                        tab one 
+
+                    </div>
+
+                    <div 
+                        className={turgle ===2?'tab-content':'none'}
+                    >
+                        tab two 
+
+                    </div>
+
+                    <div 
+                        className={turgle ===3?'tab-content':'none'}
+                    >
+                        tab three 
+
+                    </div>
+
+                    <div 
+                        className={turgle ===4?'tab-content':'none'}
+                    >
+                        tab four 
+
+                    </div>
+
+ 
                     </div>
             </div>
                 
