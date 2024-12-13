@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import SideBar from "../../components/SideBar"
 import TopBar from "../../components/TopBar"
@@ -11,8 +12,10 @@ export default function AgencyDetails() {
 
     const location = useLocation()
     var { agency } = location.state || {} // Destructure item from state
-
-
+    const [turgle, setTurgle] = useState(1)
+    const HandleTurgle = (index)=>{
+        setTurgle(index)
+    }
 
   return (
     <div className="container">
@@ -41,7 +44,37 @@ export default function AgencyDetails() {
                     </div>
                 </div>
             <div className="row-100">
-                
+            <div className="row-fluid">
+                    <div className="tabs">
+                        <div 
+                            className={turgle === 1?'tab-el active-tab':'tab-el'}
+                            onClick={() =>HandleTurgle(1)}
+                            >
+                            Branch Agencies
+                        </div>
+
+                        <div 
+                            className={turgle === 2?'tab-el active-tab':'tab-el'}
+                            onClick={() =>HandleTurgle(2)}
+                        >
+                            Order History
+                        </div>
+
+                        <div 
+                            className={turgle === 3?'tab-el active-tab':'tab-el'}
+                            onClick={() =>HandleTurgle(3)}
+                        >
+                            Wallet & Transactions
+                        </div>
+
+                        <div 
+                            className={turgle === 4?'tab-el active-tab':'tab-el'}
+                            onClick={() =>HandleTurgle(4)}
+                        >
+                            Admin & User Account
+                        </div>
+                    </div>
+                    </div>
             </div>
                 
             </div>
