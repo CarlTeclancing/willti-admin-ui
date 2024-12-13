@@ -434,7 +434,15 @@ const ModalBooking = (index, bookingData)=>{
                 </div>
                 
                 <div className="map">
-
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d127380.10837455055!2d11.550719999999998!3d3.8895616000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2scm!4v1733377803347!5m2!1sen!2scm" 
+                        allowFullScreen 
+                        loading="lazy" 
+                        className='map-1'
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title='Responsive Google Map'>
+                        
+                    </iframe>
                 </div>
                 <h4>{rideData.time? `${rideData.time}`:""}</h4>
                 <div className="location">
