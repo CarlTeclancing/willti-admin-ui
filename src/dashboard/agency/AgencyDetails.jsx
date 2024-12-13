@@ -13,6 +13,52 @@ export default function AgencyDetails() {
     const location = useLocation()
     var { agency } = location.state || {} // Destructure item from state
     const [turgle, setTurgle] = useState(1)
+
+
+    const agencyData = [
+        { agencyBranch: "Central Station", noOfBusses: 12, monthlyRevenue: 45000, address: "123 Main St, Cityville", status: "Active" },
+        { agencyBranch: "North Hub", noOfBusses: 8, monthlyRevenue: 32000, address: "456 North Ave, Uptown", status: "Inactive" },
+        { agencyBranch: "East Terminal", noOfBusses: 15, monthlyRevenue: 56000, address: "789 East Blvd, Eastside", status: "Active" },
+        { agencyBranch: "West Depot", noOfBusses: 10, monthlyRevenue: 40000, address: "101 West St, Westville", status: "Active" },
+        { agencyBranch: "South Cross", noOfBusses: 6, monthlyRevenue: 25000, address: "202 South Rd, Southend", status: "Inactive" },
+      ];
+      
+      // Generate 95 more unique entries
+      for (let i = 1; i <= 95; i++) {
+        const entry = {
+          agencyBranch: `Branch ${i}`,
+          noOfBusses: Math.floor(Math.random() * 20) + 5, // Random between 5 and 24
+          monthlyRevenue: Math.floor(Math.random() * 100000) + 10000, // Random between 10k and 110k
+          address: `${i} Example St, District ${Math.floor(Math.random() * 10) + 1}`, // District 1-10
+          status: Math.random() > 0.5 ? "Active" : "Inactive", // Random Active/Inactive
+        };
+        agencyData.push(entry);
+      }
+
+
+      const agencyDataPerPage = 10;
+      const [currentPage, setCurrentPage] = useState(0)
+
+
+      //to ident the row colors 
+      
+  
+        // Slice the agencyData array to show only the agencyData for the current page
+    const currentAgencies = agencyData.slice(currentPage * agencyDataPerPage, (currentPage + 1) * agencyDataPerPage);
+  
+    const handleNext = () => {
+      // Make sure we don't go past the last page
+      if ((currentPage + 1) * agencyDataPerPage < agencyData.length) {
+        setCurrentPage(currentPage + 1);
+      }
+    };
+  
+    const handlePrevious = () => {
+      if (currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+      }
+    };
+    let count = 0
     const HandleTurgle = (index)=>{
         setTurgle(index)
     }
@@ -78,8 +124,31 @@ export default function AgencyDetails() {
                     <div 
                         className={turgle ===1?'tab-content':'none'}
                     >
-                        tab one 
+                        <table className="table">
+                            <tr>
+                                <th>Id</th>
+                                <th>Agency Branch</th>
+                                <th>No of Busses</th>
+                                <th>Monthly Revenue</th>
+                                <th>Address</th>
+                                <th>Status</th>
 
+                            </tr>
+                            {currentAgencies.map((data) => 
+                            <tr className={count % 2 ===0 ? 'table-r1':'table-r2'}>
+                                <td>{count ++}</td>
+                                <td>{data.agencyBranch}</td>
+                                <td>{data.noOfBusses}</td>
+                                <td>{data.monthlyRevenue}</td>
+                                <td>{data.address}</td>
+                                <td>{data.status}</td>
+                            </tr>  
+        )}  
+                        </table> 
+                        <div className='pagination'>
+                                <button onClick={handlePrevious} disabled={currentPage === 0} className='btn-outline'>Previous</button>
+                                <button onClick={handleNext} disabled={(currentPage + 1) * agencyDataPerPage >= agencyData.length} className='btn-outline'>Next</button>
+                        </div>
                     </div>
 
                     <div 
