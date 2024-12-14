@@ -16,7 +16,8 @@ export default function ToggleSwitch({ label }){
                     <span className="switch" />
                 </label>
             </div>
-            {label}{" "}
+            <span className="el">{label}{" "}</span>
+            
         </div>
     );
 };

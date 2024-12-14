@@ -19,6 +19,10 @@
     cursor: pointer;
     border: 0 solid #bbb;
     border-radius: 20px;
+    
+  }
+  .el{
+    margin-left: 12px;
   }
   .inner {
     display: block;

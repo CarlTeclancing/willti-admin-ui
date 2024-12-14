@@ -13,6 +13,8 @@ import userRating from '../../assets/icons/userrating.png'
 import qrCode from '../../assets/icons/qrcode.png'
 import Wallet from '../../assets/icons/wallet.svg'
 import ArrowLeft from '../../assets/icons/arrow-right.svg'
+import idDemo from '../../assets/images/idDemo.png'
+import TuggleSwitch from '../../components/TuggleSwitch'
 
 
 export default function DriversDetails() {
@@ -159,6 +161,73 @@ const bookings = [
     },
     
 ]
+
+// const rides = [
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     },
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     },
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     },
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     },
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     },
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     },
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     },
+//     {
+//         time: "Morning ride at 10:40",
+//         start: "Entre simbock",
+//         end: "Dovv Mendong",
+//         price: 1700,
+//         car:CarImg
+
+//     }
+// ]
 //assessing state from the url location variable
     
     const location = useLocation()
@@ -369,30 +438,19 @@ const ModalBooking = (index, bookingData)=>{
                                     <td>Car</td>
                                     <td>Action</td>
                                 </tr>
-                                {currentRides.map((rideData)=>(
+                                {rides.map((ride)=>(
 
                                 <tr className={count % 2 === 0 ?'table-r1':'table-r2'}>
                                     <td>{count +=1}</td>
-                                    <td>{rideData.time}</td>
-                                    <td>{rideData.start}</td>
-                                    <td>{rideData.end}</td>
+                                    <td>{ride.time}</td>
+                                    <td>{ride.start}</td>
+                                    <td>{ride.end}</td>
                                     <td><span className="verify">{rideData.price}</span></td>
-                                    <td><img src={rideData.car} alt="" /></td>
-                                    <td>
-                                        <span 
-                                            onClick={()=>ModalRides(1, rideData)} 
-                                            state={{ user, rideData }} 
-                                            className='btn-outline'
-                                        >
-                                            View More
-                                        </span></td>
+                                    <td><img src={ride.car} alt="" /></td>
+                                    
                                 </tr>
                                 ))}
                             </table>
-                            <div className='pagination'>
-                                <button onClick={handlePrevious} disabled={currentPage === 0} className='btn-outline'>Previous</button>
-                                <button onClick={handleNext} disabled={(currentPage + 1) * ridesPerPage >= rides.length} className='btn-outline'>Next</button>
-                            </div>
                         
 
                     </div>
@@ -400,9 +458,33 @@ const ModalBooking = (index, bookingData)=>{
                     <div 
                         className={turgle ===3?'tab-content':'none'}
                     >
-                        <h4>Drivers Documents</h4>
+                        
                         <div className="row-fluid">
-                            
+                            <h3>ID Documents</h3>
+                            <div className="row-100">
+                                <div className="inner-section">
+                                    <span className="small">Front of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+
+                                <div className="inner-section">
+                                    <span className="small">Back of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+                            </div>
+
+                            <h3>Drivers License Documents</h3>
+                            <div className="row-100">
+                                <div className="inner-section">
+                                    <span className="small">Front of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+
+                                <div className="inner-section">
+                                    <span className="small">Back of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -410,9 +492,35 @@ const ModalBooking = (index, bookingData)=>{
                     <div 
                         className={turgle ===4?'tab-content':'none'}
                     >
-                        <h4>Car Documents</h4>
+                        
                         <div className="row-fluid">
-                            
+                        <h3>Car Documents</h3>
+                            <div className="row-100">
+                                <div className="inner-section">
+                                    <span className="small">Front of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+
+                                <div className="inner-section">
+                                    <span className="small">Back of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+                            </div>
+
+                            <h3>Drivers License Documents</h3>
+                            <div className="row-100">
+                                <div className="inner-section">
+                                    <span className="small">Front of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+
+                                <div className="inner-section">
+                                    <span className="small">Back of ID</span>
+                                    <img src={idDemo} alt="" />
+                                </div>
+                            </div>
+
+                        
 
                         </div>
 
@@ -421,9 +529,14 @@ const ModalBooking = (index, bookingData)=>{
                     <div 
                         className={turgle ===5?'tab-content':'none'}
                     >
-                        <h4>Security</h4>
+                        
                         <div className="row-fluid">
-                            
+                        <h3>Security</h3>
+                        
+                        <TuggleSwitch label='Access to Support' />
+                        <TuggleSwitch label='Access to driver management ' />
+                        <TuggleSwitch label='Access to Agency management ' />
+                        <TuggleSwitch label='Admin Access' />
 
                         </div>
 
@@ -444,8 +557,42 @@ const ModalBooking = (index, bookingData)=>{
                                     <img src={ArrowLeft} alt="" />
                                 </div>
 
-                                <Button value='Edit Balance' />
+                                <Button value='Edit Balance' className='w-100' />
                             </div>
+
+                            <h3>Recent Transactions</h3>
+                            
+                                <table className="table">
+                                <tr>
+                                    <td>Id</td>
+                                    <td>Time</td>
+                                    <td>From</td>
+                                    <td>To</td>
+                                    <td>Charge</td>
+                                    <td>Car</td>
+                                    <td>Action</td>
+                                </tr>
+                                {currentRides.map((rideData)=>(
+
+                                <tr className={count % 2 === 0 ?'table-r1':'table-r2'}>
+                                    <td>{count +=1}</td>
+                                    <td>{rideData.time}</td>
+                                    <td>{rideData.start}</td>
+                                    <td>{rideData.end}</td>
+                                    <td><span className="verify">{rideData.price}</span></td>
+                                    <td><img src={rideData.car} alt="" /></td>
+                                    <td>
+                                        <span 
+                                            onClick={()=>ModalRides(1, rideData)} 
+                                            state={{ user, rideData }} 
+                                            className='btn-outline'
+                                        >
+                                            View More
+                                        </span></td>
+                                </tr>
+                                ))}
+                            </table>
+                            
 
                         </div>
 
