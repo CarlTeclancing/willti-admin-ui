@@ -36,7 +36,8 @@ body::-webkit-scrollbar {
 
 }
 .narrow{
-  width: 100%;
+  width: calc(100% - 237px);
+  margin-left: 284px;
   height: 100%;
 }
 .btn{

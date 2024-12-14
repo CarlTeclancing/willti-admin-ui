@@ -5,7 +5,7 @@
     padding: 24px;
 }
 .row{
-    width: calc(100% - 100px);
+    width: calc(100% - 237px);
     height: 588px;
     padding: 24px;
     background-color: var(--tertiary);

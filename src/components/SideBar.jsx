@@ -33,7 +33,7 @@ export default function SideBar() {
         <span className='nav-category'>User Management </span>
 
         <Link to="/dashboard/users" 
-            className={location.pathname === '/dashboard/users' ? 'nav-el-active' : 'nav-el'} 
+            className={(location.pathname === '/dashboard/users') || (location.pathname ==='/dashboard/users/user-detials') ? 'nav-el-active' : 'nav-el'} 
             >
 
             <i className="bi bi-person icon"></i>
@@ -41,14 +41,14 @@ export default function SideBar() {
         </Link>
 
         <Link to="/dashboard/drivers" 
-            className={location.pathname === '/dashboard/drivers' ? 'nav-el-active' : 'nav-el'} 
+            className={location.pathname === '/dashboard/drivers' || location.pathname ==='/dashboard/drivers/driver-detials' ? 'nav-el-active' : 'nav-el'} 
             >
             <i className="bi bi-people icon"></i>
             <span className='nav'>Drivers</span>
         </Link>
 
         <Link to="/dashboard/agencies" 
-            className={location.pathname === '/dashboard/agencies' ? 'nav-el-active' : 'nav-el'} 
+            className={location.pathname === '/dashboard/agencies' || location.pathname === '/dashboard/agency/agency-detials'? 'nav-el-active' : 'nav-el'} 
             >
             <i className="bi bi-bus-front-fill icon"></i>
             <span className='nav'>Agencies</span>
